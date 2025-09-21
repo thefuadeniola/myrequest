@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 import axios from 'axios'
 import Image from 'next/image'
 
-const page = () => {
+const Request = () => {
 
     const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
     const clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
@@ -81,7 +81,7 @@ const page = () => {
             }
         }
         getToken();
-    }, [])
+    }, [clientId, clientSecret])
 
   return (
     <div className='px-4 pt-2 font-inter'>
@@ -124,4 +124,4 @@ const page = () => {
   )
 }
 
-export default page 
+export default Request 

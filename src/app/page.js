@@ -23,19 +23,25 @@ export default function Home() {
           Enter room
         </button>
       </div>
-      <div className="fixed top-0 right-0 h-screen w-screen  bg-black/50 flex items-center justify-center">
-        <div className="rounded-md bg-white shadow-md h-fit w-4/5 z-100 p-5">
-          <label>Enter room pin for Soundless:</label>
-          <input type="number" className="border-1 border-[#d3d3d3] mt-2 rounded-md w-full pl-2 py-1" />
-          <button 
-            onClick={() => router.push("/request")}
-            className="mt-3 bg-[#a4161a] text-white font-bold text-md rounded-md h-8 px-4"
-          >
-            Enter
-          </button>
-        </div>
+      {
+        popup && (
+          <div className="fixed top-0 right-0 h-screen w-screen  bg-black/50 flex items-center justify-center" onClick={() => showPopup(false)}>
+            <div className="rounded-md bg-white shadow-md h-fit w-4/5 z-100 p-5" onClick={(e) => e.stopPropagation()}>
+              <label>Enter room pin for Soundless:</label>
+              <input type="number" className="border-1 border-[#d3d3d3] mt-2 rounded-md w-full pl-2 py-1" />
+              <button 
+                onClick={() => router.push("/request")}
+                className="mt-3 bg-[#a4161a] text-white font-bold text-md rounded-md h-8 px-4"
+              >
+                Enter
+              </button>
+            </div>
+          </div>
+
+        )
+      }
       </div>
-    </div>
+
   );
 }
  
