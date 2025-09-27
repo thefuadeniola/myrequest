@@ -85,7 +85,7 @@ const Register = ({ setLoginModal }) => {
                 {loading ?  <Image src={spinner} alt='spinner' height={24} width={24} unoptimized />  : <span>Login</span>}
             </button>
 
-            <p className='mt-2 text-sm'>If you don't have an account, fill the same form but click:</p>
+            <p className="mt-2 text-sm">If you don&apos;t have an account, fill the same form but click:</p>
             <button 
                 className={`mt-0 bg-white font-bold text-md rounded-md h-8`}
                 onClick={handleRegister}
