@@ -207,7 +207,7 @@ const Request = () => {
                 ) : requestSuccess === null ? <></> :
 
                 ( 
-                    <div className='text-sm text-gray-500'>Couldn't make that happen, try again.</div> 
+                    <div className='text-sm text-gray-500'>Couldn&apos;t make that happen, try again.</div> 
                 )
                 
             }
