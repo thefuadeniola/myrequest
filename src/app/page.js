@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(()=>{
     const fetchRooms = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8000/api/room/all")
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/room/all`)
         if(data) setAllRooms(data)
       } catch (error) {
         console.log("Error fetching rooms:", error)

@@ -23,7 +23,7 @@ const Register = ({ setLoginModal }) => {
         }
         try {
             const { data } = await axios.post(
-                `http://localhost:8000/api/user/register`, 
+                `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/user/register`, 
                 { username, password },
                 { withCredentials: true }
             )
@@ -48,7 +48,7 @@ const Register = ({ setLoginModal }) => {
         }
         try {
             const { data } = await axios.post(
-                `http://localhost:8000/api/user/login`, 
+                `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/user/login`, 
                 { username, password }, 
                 { withCredentials: true }
             )

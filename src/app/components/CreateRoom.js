@@ -40,7 +40,7 @@ const CreateRoom = ({ showPopup }) => {
 
         try {
             const { data } = await axios.post(
-                'http://localhost:8000/api/room/create', 
+                `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/room/create`, 
                 {
                     name: roomName, pin: roomPin, image: roomImg
                 },
@@ -50,6 +50,7 @@ const CreateRoom = ({ showPopup }) => {
             if(data) { 
                 setLoading(false) 
                 setMessage("Room successfully created! Tap outside this dialog box to close.")
+                window.location.reload()
             }
             
         } catch (error) {

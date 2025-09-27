@@ -16,7 +16,7 @@ const EnterRoom = ({ showPopup, roomName, roomId }) => {
     try {
         setError("")
         const { data } = await axios.post(
-            "http://localhost:8000/api/room/enter",
+            `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/room/enter`,
             { id: roomId, pin },
             { withCredentials: true }
         );

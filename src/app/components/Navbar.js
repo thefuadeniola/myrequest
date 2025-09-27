@@ -19,7 +19,7 @@ const Navbar = () => {
       const checkAuth = async() => {
         try {
           const { data } = await axios.get(
-            "http://localhost:8000/api/user/me",
+            `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/user/me`,
             { withCredentials: true }
           );
 
@@ -34,7 +34,7 @@ const Navbar = () => {
 
     const handleLogout = async() => {
       try {
-        const { data } = await axios.post("http://localhost:8000/api/user/logout", {}, {withCredentials: true});
+        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/user/logout`, {}, {withCredentials: true});
         if(data) window.location.reload()
       } catch (error) {
         console.log("Unable to logout.")
