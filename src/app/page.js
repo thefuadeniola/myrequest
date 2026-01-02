@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="font-inter p-4 pb-20 flex flex-col gap-4 lg:flex-row lg:flex-wrap">
+    <div className="font-inter p-4 pb-30 flex flex-col gap-4 lg:flex-row lg:flex-wrap">
       Select a request room to make your request
       {
         allRooms ? (
