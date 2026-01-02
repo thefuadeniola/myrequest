@@ -38,7 +38,10 @@ const Request = () => {
                 { withCredentials: true }
             )
 
-            if(data) setRoomData(data)
+            if(data) {
+                setRoomData(data)
+                setRequests(data?.requests)
+            }
 
         } catch (error) {
             setBlockAccess(true)
@@ -64,7 +67,7 @@ const Request = () => {
             )
 
             if(data) {
-                setRoomData(data)
+                setRequests(data.requests)
                 setRequestSuccess(true)
                 setResultArray([])
 
@@ -212,7 +215,7 @@ const Request = () => {
                 
             }
 
-            <AllRequests requests={roomData.requests} />
+            <AllRequests requests={requests} />
         </div>
     </>
   )

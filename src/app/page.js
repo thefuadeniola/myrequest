@@ -22,14 +22,14 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="font-inter p-4 lg:pb-20">
+    <div className="font-inter p-4 pb-20 flex flex-col gap-4 lg:flex-row lg:flex-wrap">
       Select a request room to make your request
       {
         allRooms ? (
 
         allRooms.map((room) => (
         <div className='w-full h-fit relative' key={room._id}>
-          <Image src={room.image} height={200} width={200} alt={room.name} className="rounded-md mt-4"  />
+          <Image src={room.image} height={200} width={200} alt={room.name} className="rounded-md"  />
           <button 
             onClick={() => showPopup({ state: true, name: room.name })}
             className="absolute bottom-2 left-10 mx-auto shadow-md bg-[#a4161a] text-white font-bold text-md rounded-4xl h-12 px-4"

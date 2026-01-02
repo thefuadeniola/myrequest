@@ -42,7 +42,7 @@ const CreateRoom = ({ showPopup }) => {
             const { data } = await axios.post(
                 `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/room/create`, 
                 {
-                    name: roomName, pin: roomPin, image: roomImg
+                    name: roomName, pin: roomPin.toString().trim(), image: roomImg
                 },
                 { withCredentials: true }
             )
@@ -71,7 +71,7 @@ const CreateRoom = ({ showPopup }) => {
 
             <div className='mb-2'>
                 <label className='text-sm'>Room Pin</label>
-                <input type="number" value={roomPin} onChange={(e) => setRoomPin(e.target.value)} className="border-1 border-[#d3d3d3] mt-1 rounded-md w-full pl-2 py-1" />
+                <input type="text" value={roomPin} onChange={(e) => setRoomPin(e.target.value)} className="border-1 border-[#d3d3d3] mt-1 rounded-md w-full pl-2 py-1" />
             </div>
 
             <div>
